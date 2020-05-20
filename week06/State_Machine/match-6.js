@@ -63,7 +63,7 @@ function foundB3(c) {
   if (c === 'x') {
     return end
   } else {
-    return foundB(c)
+    return foundB2(c)
   }
 }
 
