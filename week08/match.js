@@ -1,7 +1,7 @@
 // 检查一个元素和一个选择器是否匹配
 function match(selector, element) {
   // 'body  #form > .form-title  ~ label +  [role]' -> ["body ", "#form>", ".form-title~", "label+", "[role]"]
-  const selectors = rule
+  const selectorParts = selector
     .trim()
     .replace(/(?<=[~+>])\s+/g, '')
     .replace(/\s+(?=[ ~+>])/g, '')
@@ -23,7 +23,7 @@ function findMatchedElement(selector, element) {
   const nextElementKey = getNextElementKey(combinator)
 
   if (/[>+]$/.test(selector)) {
-    // Child combinator OR Next-sibling combinator
+    // Child combinator or Next-sibling combinator
     selector = selector.replace(/[>+]$/, '')
     element = element[nextElementKey]
     if (!matchBySimpleSelectorSequence(selector, element)) {
