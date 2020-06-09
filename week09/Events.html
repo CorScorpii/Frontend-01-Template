@@ -1,0 +1,19 @@
+<div id="a" style="width:100%;height:300px;background:lightblue;">
+    <div id="b" style="width:100%;height:200px;background:lightcoral">
+        <div id="c" style="width:100%;height:100px;background:lightyellow">
+
+        </div>
+    </div>
+</div>
+<script>
+    const a = document.getElementById("a")
+    const b = document.getElementById("b")
+    const c = document.getElementById("c")
+    a.addEventListener("click", () => { console.log("a-capture") }, true)
+    b.addEventListener("click", () => { console.log("b-capture") }, true)
+    c.addEventListener("click", () => { console.log("c-capture") }, true)
+    a.addEventListener("click", () => { console.log("a-bubble") }, false)
+    b.addEventListener("click", () => { console.log("b-bubble") }, false)
+    c.addEventListener("click", () => { console.log("c-bubble") }, false)
+
+</script>

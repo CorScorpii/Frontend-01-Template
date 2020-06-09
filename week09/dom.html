@@ -1,0 +1,22 @@
+<div id="x">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+<div id="b">
+
+</div>
+<script>
+    var x = document.getElementById('x')
+    var b = document.getElementById('b')
+    while (x.children.length) {
+        b.appendChild(x.children[0])
+    }
+    //错误写法，children是livIng collection,在遍历的过程中第0个移走了，第2个就变成了第1个，所以只有1和3被移动了
+    // for (let i = 0; i < x.children.length; i++) {
+    //     b.appendChild(x.children[i])
+    // }
+
+</script>

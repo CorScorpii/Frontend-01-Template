@@ -160,7 +160,7 @@ function layout(element) {
 
     if (itemStyle.flex) {
       flexLine.push(item)
-    } else if (style.flexWrap === 'nowrap' && isAutoMainSize) {
+    } else if (style.flexWrap === 'nowrap' || isAutoMainSize) {
       mainSpace -= itemStyle[mainSize] //剩余宽度
       if (itemStyle[crossSize] !== null && itemStyle[crossSize] !== void 0) {
         crossSpace = Math.max(crossSpace, itemStyle[crossSize])
