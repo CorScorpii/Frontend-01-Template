@@ -1,0 +1,19 @@
+<html>
+<!--inline元素会产生多个盒，伪元素生成的盒不会被记录到rects里面，因为伪元素其实是一个子元素的概念-->
+<style>
+    .x::before {
+        content: '额外'
+    }
+</style>
+
+<div style="width:100px; height:400px; overflow:scroll;">
+    文字<span class="x" style="background-color: lightcoral; line-height:1.5;">
+        文字 文字 文字 文字 文字 文字 文字 文字 文字 文字 文字 文字
+    </span>
+</div>
+<script>
+    $0.getClientRects()
+    $0.getBoundingClientRect()
+</script>
+
+</html>

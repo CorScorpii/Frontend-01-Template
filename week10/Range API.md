@@ -61,7 +61,6 @@
       ```
 
   - 获取range
-
     - ```javascript
       var range = new Range()
       range.setStart(element, 9) //设置起点，可设置到文本节点里面的单个文字的前后
@@ -194,26 +193,17 @@
 ## Rule
 
 - CSSStyleRule
-
 - CSSCharsetRule
-
 - CSSImportRule
-
 - CSSMediaRule
-
 - CSSFontFaceRule
-
 - CSSPageRule
-
 - CSSNamespaceRule
-
 - CSSKeyframesRule
-
 - CSSKeyframeRule
-
 - CSSSupportsRule
 
-- CSSStyleRule
+-  CSSStyleRule
 
   - selectorText String
 

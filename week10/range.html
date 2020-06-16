@@ -1,0 +1,19 @@
+<html>
+<div id="a">123<span style="background-color: pink">456789</span>0123456789</div>
+<script>
+    let range = new Range()
+    //移除7890123
+    range.setStart(document.getElementById('a').childNodes[1].childNodes[0], 3)
+    range.setEnd(document.getElementById('a').childNodes[2], 3)
+    range.extractContents()
+    //移除456789012
+    range.setStart(document.getElementById('a').childNodes[1].childNodes[0], 0)
+    range.setEnd(document.getElementById('a').childNodes[2], 3)
+    range.extractContents()
+    //移除整个span和012
+    range.setStart(document.getElementById('a').childNodes[0], 3)
+    range.setEnd(document.getElementById('a').childNodes[2], 3)
+    range.extractContents()
+</script>
+
+</html>

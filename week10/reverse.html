@@ -1,0 +1,51 @@
+<!--把一个元素的子元素逆序-->
+<html>
+<div id="a">
+    <span>1</span>
+    <p>2</p>
+    <a>3</a>
+    <div>4</div>
+</div>
+
+<script>
+    let element = document.getElementById('a')
+
+    //基础答案
+    function reverseChildren1(element) {
+        let children = Array.prototype.slice.call(element.childNodes)
+
+        element.innerHTML = ''
+
+        children.reverse()
+
+        for (let child of children) {
+            element.appendChild(child)
+        }
+    }
+
+    //进阶答案
+    function reverseChildren2(element) {
+        let l = element.childNodes.length
+        while (l-- > 0) {
+            element.appendChild(element.childNodes[l])
+        }
+    }
+
+    //满分答案
+    function reverseChildren(element) {
+        let range = new Range()
+        range.selectNodeContents(element)
+
+        //在fragment上操作没有重排和重绘
+        let fragment = range.extractContents()
+        let l = fragment.childNodes.length
+        while (l-- > 0) {
+            fragment.appendChild(fragment.childNodes[l])
+        }
+        element.appendChild(fragment)
+    }
+    reverseChildren(element)
+
+</script>
+
+</html>
