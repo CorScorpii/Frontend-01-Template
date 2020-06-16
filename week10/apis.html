@@ -87,7 +87,7 @@
 
 
 
-    //https://wicg.github.io/BackgroundSync/spec/#sync-manager-interface
+    //https://wicg.github.io/BackgroundSync/spec/
 
     names = filterOut(names, ["SyncManager"]);
 
@@ -99,7 +99,7 @@
 
     names = filterOut(names, ["ScreenOrientation"])
 
-    //https://www.w3.org/TR/webrtc/#rtctrackevent
+    //https://www.w3.org/TR/webrtc/
 
     names = filterOut(names, ["RTCTrackEvent", "RTCStatsReport", "RTCSessionDescription", "RTCSctpTransport", "RTCRtpTransceiver", "RTCRtpSender", "RTCRtpReceiver", "RTCPeerConnectionIceEvent", "RTCPeerConnectionIceErrorEvent", "RTCPeerConnection", "RTCIceCandidate", "RTCErrorEvent", "RTCError", "RTCDtlsTransport", "RTCDataChannelEvent", "RTCDataChannel", "RTCDTMFToneChangeEvent", "RTCDTMFSender", "RTCCertificate"])
 
@@ -123,7 +123,7 @@
 
     names = filterOut(names, ["MediaEncryptedEvent"])
 
-    //https://w3c.github.io/media-capabilities/#mediacapabilities
+    //https://w3c.github.io/media-capabilities/
 
     names = filterOut(names, ["MediaCapabilities"])
 
@@ -151,13 +151,13 @@
 
     names = filterOut(names, ["DecompressionStream", "CompressionStream"])
 
-    //https://www.w3.org/TR/dom40/#sec-domerror
+    //https://www.w3.org/TR/dom40/
 
     names = filterOut(names, ["DOMError"])
 
     //https://www.w3.org/TR/WebCryptoAPI/
 
-    names = filterOut(names, ["Crypto"])
+    names = filterOut(names, ["Crypto", "SubtleCrypto", "CryptoKey"])
 
     //https://www.w3.org/TR/clipboard-apis/
 
@@ -175,7 +175,7 @@
 
     names = filterOut(names, ["BatteryManager"])
 
-    //https://www.w3.org/TR/DOM-Level-3-XPath/xpath.html#XPathResult
+    //https://www.w3.org/TR/DOM-Level-3-XPath/xpath.html
 
     names = filterOut(names, ["XPathResult", "XPathExpression", "XPathEvaluator"])
 
@@ -189,7 +189,7 @@
 
     //https://www.w3.org/TR/uievents/
 
-    names = filterOut(names, ["WheelEvent", "UIEvent"])
+    names = filterOut(names, ["WheelEvent", "UIEvent", "MouseEvent", "KeyboardEvent", "InputEvent"])
 
     //https://wicg.github.io/visual-viewport/
 
@@ -199,19 +199,15 @@
 
     names = filterOut(names, ["VTTCue"])
 
-    //https://url.spec.whatwg.org/#urlsearchparams
+    //https://url.spec.whatwg.org/
 
-    names = filterOut(names, ["URLSearchParams"])
+    names = filterOut(names, ["URLSearchParams", "URL"])
 
-    //https://url.spec.whatwg.org/#api
+    //https://dom.spec.whatwg.org/
 
-    names = filterOut(names, ["URL"])
+    names = filterOut(names, ["TreeWalker", "StaticRange", "Range", "NodeList", "NodeIterator", "NodeFilter", "NamedNodeMap", "MutationRecord", "MutationObserver", "MutationEvent", "HTMLCollection"])
 
-    //https://dom.spec.whatwg.org/#interface-treewalker
-
-    names = filterOut(names, ["TreeWalker"])
-
-    //https://drafts.csswg.org/css-transitions/#interface-transitionevent
+    //https://drafts.csswg.org/css-transitions/
 
     names = filterOut(names, ["TransitionEvent"])
 
@@ -223,25 +219,21 @@
 
     names = filterOut(names, ["TextEvent"])
 
-    //https://w3c.github.io/longtasks/#sec-TaskAttributionTiming
+    //https://w3c.github.io/longtasks/
 
     names = filterOut(names, ["TaskAttributionTiming"])
 
-    //https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitevent
+    //https://html.spec.whatwg.org/multipage/
 
-    names = filterOut(names, ["SubmitEvent"])
+    names = filterOut(names, ["SubmitEvent", "HTMLOptionsCollection", "HTMLFormControlsCollection"])
 
-    //https://drafts.csswg.org/cssom/#the-stylesheetlist-interface
+    //https://drafts.csswg.org/cssom/
 
-    names = filterOut(names, ["StyleSheetList", "StyleSheet"])
+    names = filterOut(names, ["StyleSheetList", "StyleSheet", "MediaList"])
 
     //https://www.w3.org/TR/css-typed-om-1/
 
     names = filterOut(names, ["StylePropertyMapReadOnly", "StylePropertyMap"])
-
-    //https://dom.spec.whatwg.org/
-
-    names = filterOut(names, ["StaticRange"])
 
     //https://www.w3.org/TR/selection-api/
 
@@ -251,9 +243,9 @@
 
     names = filterOut(names, ["SecurityPolicyViolationEvent"])
 
-    //https://drafts.csswg.org/cssom-view/#the-screen-interface
+    //https://drafts.csswg.org/cssom-view/
 
-    names = filterOut(names, ["Screen"])
+    names = filterOut(names, ["Screen", "MediaQueryListEvent", "MediaQueryList"])
 
     //https://www.w3.org/TR/SVG11/types.html#
 
@@ -265,7 +257,7 @@
 
     //https://fetch.spec.whatwg.org/
 
-    names = filterOut(names, ["Response", "Request"])
+    names = filterOut(names, ["Response", "Request", "Headers"])
 
     //https://drafts.csswg.org/resize-observer/
 
@@ -274,10 +266,6 @@
     //https://w3c.github.io/reporting/
 
     names = filterOut(names, ["ReportingObserver"])
-
-    //https://tools.ietf.org/html/rfc7233#section-3.1
-
-    names = filterOut(names, ["Range"])
 
     //https://www.w3.org/TR/pointerevents2/
 
@@ -295,9 +283,49 @@
 
     names = filterOut(names, ["PerformanceResourceTiming"])
 
-    //https://
+    //https://www.w3.org/TR/paint-timing/
 
-    names = filterOut(names, [""])
+    names = filterOut(names, ["PerformancePaintTiming"])
+
+    //https://www.w3.org/TR/performance-timeline-2/
+
+    names = filterOut(names, ["PerformanceObserverEntryList", "PerformanceObserver"])
+
+    //https://www.w3.org/TR/navigation-timing-2/
+
+    names = filterOut(names, ["PerformanceNavigationTiming", "PerformanceNavigation"])
+
+    //https://www.w3.org/TR/user-timing-2/
+
+    names = filterOut(names, ["PerformanceMeasure", "PerformanceMark", "PerformanceEntry", "Performance"])
+
+    //https://w3c.github.io/longtasks/
+
+    names = filterOut(names, ["PerformanceLongTaskTiming"])
+
+    //https://wicg.github.io/layout-instability
+
+    names = filterOut(names, ["LayoutShift"])
+
+    //https://wicg.github.io/largest-contentful-paint/
+
+    names = filterOut(names, ["LargestContentfulPaint"])
+
+    //https://drafts.csswg.org/web-animations-1/
+
+    names = filterOut(names, ["KeyframeEffect"])
+
+    //https://www.w3.org/TR/intersection-observer/
+
+    names = filterOut(names, ["IntersectionObserverEntry", "IntersectionObserver"])
+
+    //https://wicg.github.io/input-device-capabilities/
+
+    names = filterOut(names, ["InputDeviceCapabilities"])
+
+    //https://www.w3.org/TR/requestidlecallback/
+
+    names = filterOut(names, ["IdleDeadline"])
 
     console.log(names.length);
 
