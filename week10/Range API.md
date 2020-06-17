@@ -237,7 +237,7 @@
   - elt 想要获取的元素
   - pseudoElt 可选，伪元素
 
-##  View相关
+##  View部分
 
 - window API
 
