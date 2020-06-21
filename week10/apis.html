@@ -21,7 +21,8 @@
             "parseFloat", "parseInt", "decodeURI", "decodeURIComponent", "encodeURI", "encodeURIComponent", "Array", "Date", "RegExp", "Promise", "Proxy",
             "Map", "WeakMap", "Set", "WeakSet", "Function", "Boolean", "String", "Number", "Symbol", "Object", "Error", "EvalError", "RangeError",
             "ReferenceError", "SyntaxError", "TypeError", "URIError", "ArrayBuffer", "SharedArrayBuffer", "DataView", "Float32Array", "Float64Array",
-            "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint16Array", "Uint32Array", "Uint8ClampedArray", "Atomics", "JSON", "Math", "Reflect", "escape", "unescape"];
+            "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint16Array", "Uint32Array", "Uint8ClampedArray", "Atomics", "JSON", "Math",
+            "Reflect", "escape", "unescape", "WebAssembly"];
         objects.forEach(o => js.add(o));
         names = names.filter(e => !js.has(e));
 
@@ -38,7 +39,8 @@
     names = filterOut(names, ["Event", "CustomEvent", "EventTarget", "AbortController", "AbortSignal", "NodeList",
         "HTMLCollection", "MutationObserver", "MutationRecord", "Node", "Document", "DOMImplementation", "DocumentType",
         "DocumentFragment", "ShadowRoot", "Element", "NamedNodeMap", "Attr", "CharacterData", "Text", "CDATASection",
-        "ProcessingInstruction", "Comment", "AbstractRange", "StaticRange", "Range", "NodeIterator", "TreeWalker", "NodeFilter", "DOMTokenList"])
+        "ProcessingInstruction", "Comment", "AbstractRange", "StaticRange", "Range", "NodeIterator", "TreeWalker",
+        "NodeFilter", "DOMTokenList", "event"])
 
 
     //https://html.spec.whatwg.org/
@@ -67,7 +69,7 @@
             "WeakMap", "Set", "WeakSet", "Function", "Boolean", "String", "Number", "Symbol", "Object", "Error", "EvalError", "RangeError",
             "ReferenceError", "SyntaxError", "TypeError", "URIError", "ArrayBuffer", "SharedArrayBuffer", "DataView", "Float32Array", "Float64Array",
             "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint16Array", "Uint32Array", "Uint8ClampedArray", "Atomics", "JSON",
-            "Math", "Reflect", "escape", "unescape"];
+            "Math", "Reflect", "escape", "unescape", "visualViewport", "isSecureContext", "performance", "getSelection", "blur", "find"];
         objects.forEach(o => js.add(o));
         names = names.filter(e => !js.has(e));
 
@@ -301,7 +303,7 @@
     names = filterOut(names, ["XPathException", "XPathExceptionCode", "XPathNSResolver", "XPathNamespace", "XPathResult", "XPathExpression", "XPathEvaluator"])
 
     //https://www.w3.org/TR/DOM-Parsing/
-    names = filterOut(names, ["XMLSerializer"])
+    names = filterOut(names, ["DOMParser", "XMLSerializer"])
 
     //https://www.w3.org/TR/webvtt1/
     names = filterOut(names, ["VTTCue", "VTTRegion"])
@@ -428,6 +430,18 @@
     //https://www.w3.org/TR/payment-handler
     names = filterOut(names, ["PaymentManager", "PaymentInstruments"])
 
+    //https://www.w3.org/TR/permissions/
+    names = filterOut(names, ["PermissionStatus", "Permissions"])
+
+    //https://www.w3.org/TR/gyroscope/
+    names = filterOut(names, ["Gyroscope"]);
+
+    //https://w3c.github.io/webappsec-trusted-types/dist/spec/
+    names = filterOut(names, ["trustedTypes"])
+
+    //https://www.w3.org/TR/worklets-1
+    names = filterOut(names, ["Worklet"])
+
     //https://immersive-web.github.io/dom-overlays/
     names = filterOut(names, ["XRDOMOverlayState"])
 
@@ -547,11 +561,15 @@
     names = filterOut(names, ["speechSynthesis", "SpeechSynthesisUtterance", "SpeechSynthesisEvent",
         "SpeechSynthesisErrorEvent"])
 
+    //https://wicg.github.io/background-sync/spec/PeriodicBackgroundSync-index.html
+    names = filterOut(names, ["PeriodicSyncManager"])
 
 
 
+    //idea only
 
-
+    // obsolete in MDN
+    names = filterOut(names, [, 'defaultStatus', 'defaultstatus'])
 
     // deprecated in MDN
     names = filterOut(names, ["MediaStreamEvent", "DOMError", "external", "captureEvents", "releaseEvents"])
@@ -562,7 +580,7 @@
     //No spec found
     names = filterOut(names, ["clientInformation", "offscreenBuffering", "styleMedia", "chrome", "PerformanceLayoutJank",
         "ActivateInvisibleEvent", "PictureInPictureControlEvent", "ApplicationCacheErrorEvent", "IdleManager", "IdleStatus",
-        "Serial", "SerialPort"])
+        "Serial", "SerialPort", "FragmentDirective", "filterOut"])
 
 
 
