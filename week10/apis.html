@@ -52,7 +52,8 @@
             "OffscreenCanvasRenderingContext2D", "PageTransitionEvent", "Path2D", "Plugin", "PluginArray", "PopStateEvent", "PromiseRejectionEvent",
             "RadioNodeList", "SharedWorker", "SharedWorkerGlobalScope", "Storage", "StorageEvent", "TextMetrics", "TextTrack", "TextTrackCue",
             "TextTrackCueList", "TextTrackList", "TimeRanges", "TrackEvent", "ValidityState", "VideoTrack", "VideoTrackList", "WebSocket",
-            "Window", "Worker", "WorkerGlobalScope", "WorkerLocation", "WorkerNavigator", "SubmitEvent", "HTMLOptionsCollection", "HTMLFormControlsCollection", "ElementInternals"];
+            "Window", "Worker", "WorkerGlobalScope", "WorkerLocation", "WorkerNavigator", "SubmitEvent", "HTMLOptionsCollection",
+            "HTMLFormControlsCollection", "ElementInternals", "sessionStorage", "localStorage"];
         objects.forEach(o => interfaces.add(o));
 
         names = names.filter(e => !interfaces.has(e));
@@ -85,6 +86,10 @@
         objects.forEach(o => windowprops.add(o));
         names = names.filter(e => !windowprops.has(e));
     }
+
+    //https://html.spec.whatwg.org/multipage/
+    names = filterOut(names, ["origin", "btoa", "atob", "setTimeout", "clearTimeout", "setInterval", "clearInterval", "queueMicrotask",
+        "createImageBitmap", "requestAnimationFrame", "cancelAnimationFrame", "UserActivation"])
 
     //https://streams.spec.whatwg.org/
     names = filterOut(names, ["ReadableStream", "ReadableStreamDefaultReader", "ReadableStreamBYOBReader", "ReadableStreamDefaultController",
@@ -143,7 +148,7 @@
     names = filterOut(names, ["RTCPeerConnection", "RTCPeerConnection", "RTCSessionDescription", "RTCIceCandidate", "RTCPeerConnectionIceEvent",
         "RTCPeerConnection", "RTCCertificate", "RTCPeerConnection", "RTCRtpSender", "RTCRtpReceiver", "RTCRtpTransceiver",
         "RTCIceTransport", "RTCTrackEvent", "RTCPeerConnection", "RTCDataChannel", "RTCDataChannelEvent", "RTCRtpSender",
-        "RTCDTMFSender", "RTCDTMFToneChangeEvent", "RTCPeerConnection", "RTCStatsReport", "RTCSctpTransport", "RTCPeerConnectionIceErrorEvent", "RTCErrorEvent", "RTCError", "RTCDtlsTransport"])
+        "RTCDTMFSender", "RTCDTMFToneChangeEvent", "RTCPeerConnection", "RTCStatsReport", "RTCSctpTransport", "RTCPeerConnectionIceErrorEvent", "RTCErrorEvent", "RTCError", "RTCDtlsTransport", "MediaStreamEvent"])
 
     //https://www.w3.org/TR/IndexedDB/
     names = filterOut(names, ["IDBRequest", "IDBOpenDBRequest", "IDBVersionChangeEvent", "IDBFactory", "IDBDatabase",
@@ -281,7 +286,7 @@
     names = filterOut(names, ["DOMError"])
 
     //https://www.w3.org/TR/clipboard-apis/
-    names = filterOut(names, ["ClipboardItem"])
+    names = filterOut(names, ["ClipboardItem", "Clipboard"])
 
     //https://www.w3.org/TR/mediacapture-fromelement/
     names = filterOut(names, ["CanvasCaptureMediaStreamTrack"])
@@ -364,6 +369,81 @@
     //https://www.w3.org/TR/clipboard-apis/
     names = filterOut(names, ["ClipboardEvent"])
 
+    //PaymentRequestUpdateEvent
+    names = filterOut(names, ["PaymentRequest", "PaymentAddress", "PaymentResponse", "PaymentMethodChangeEvent",
+        "PaymentRequestUpdateEvent"])
+
+    //https://www.w3.org/TR/push-api/
+    names = filterOut(names, ["PushManager", "PushSubscriptionOptions", "PushSubscription"])
+
+    //https://www.w3.org/TR/remote-playback/
+    names = filterOut(names, ["RemotePlayback"])
+
+    //https://www.w3.org/TR/webdatabase/
+    names = filterOut(names, ["openDatabase"])
+
+    //https://w3c.github.io/webappsec-trusted-types/dist/spec/
+    names = filterOut(names, ["TrustedHTML", "TrustedScript", "TrustedScriptURL", "TrustedTypePolicy",
+        "TrustedTypePolicyFactorys", "TrustedTypePolicyFactory", "TrustedURL", "TrustedTypes"])
+
+    //https://www.w3.org/TR/credential-management-1/
+    names = filterOut(names, ["Credential", "CredentialsContainer", "PasswordCredential",
+        "FederatedCredential"])
+
+    //https://www.w3.org/TR/presentation-api/
+    names = filterOut(names, ["Presentation", "PresentationRequest", "PresentationAvailability",
+        "PresentationConnectionAvailableEvent", "PresentationConnection", "PresentationConnectionCloseEvent",
+        "PresentationReceiver", "PresentationConnectionList"])
+
+    //https://www.w3.org/TR/generic-sensor/
+    names = filterOut(names, ["SensorErrorEvent", "Sensor"])
+
+    //https://www.w3.org/TR/orientation-sensor/
+    names = filterOut(names, ["OrientationSensor", "AbsoluteOrientationSensor", "RelativeOrientationSensor"])
+
+    //https://www.w3.org/TR/orientation-event/
+    names = filterOut(names, ["DeviceMotionEventRotationRate", "DeviceMotionEventAcceleration"])
+
+    //https://www.w3.org/TR/service-workers/
+    names = filterOut(names, ["ServiceWorker", "ServiceWorkerRegistration", "ServiceWorkerContainer",
+        "NavigationPreloadManager", "Cache", "CacheStorage", "caches"])
+
+    //https://www.w3.org/TR/webmidi/
+    names = filterOut(names, ["MIDIOptions", "MIDIInputMap", "MIDIOutputMap", "MIDIAccess", "MIDIPort", "MIDIInput",
+        "MIDIOutput", "MIDIMessageEvent", "MIDIMessageEventInit", "MIDIConnectionEvent", "MIDIConnectionEventInit"])
+
+    //https://www.w3.org/TR/webxr/
+    names = filterOut(names, ["XR", "XRSession", "XRRenderState", "XRFrame", "XRSpace", "XRPose", "XRReferenceSpace", "XRStationaryReferenceSpace",
+        "XRBoundedReferenceSpace", "XRUnboundedReferenceSpace", "XRView", "XRViewport", "XRRigidTransform", "XRRay",
+        "XRViewerPose", "XRInputSource", "XRInputSourceArray", "XRInputPose", "XRLayer", "XRWebGLLayer", "XRPresentationContext", "XRSessionEvent",
+        "XRInputSourceEvent", "XRInputSourcesChangeEvent", "XRReferenceSpaceEvent"])
+
+    //https://www.w3.org/TR/webauthn-2/
+    names = filterOut(names, ["PublicKeyCredential", "AuthenticatorResponse", "AuthenticatorAttestationResponse",
+        "AuthenticatorAssertionResponse"])
+
+    //https://www.w3.org/TR/accelerometer/
+    names = filterOut(names, ["Accelerometer", "LinearAccelerationSensor"])
+
+    //https://www.w3.org/TR/payment-handler
+    names = filterOut(names, ["PaymentManager", "PaymentInstruments"])
+
+    //https://immersive-web.github.io/dom-overlays/
+    names = filterOut(names, ["XRDOMOverlayState"])
+
+    //https://immersive-web.github.io/webxr/
+    names = filterOut(names, ["XRSystem"])
+
+    //https://immersive-web.github.io/hit-test/
+    names = filterOut(names, ["XRHitTestSource", "XRTransientInputHitTestSource", "XRHitTestResult", "XRTransientInputHitTestResult"])
+
+    //https://w3c.github.io/webappsec-feature-policy/
+    names = filterOut(names, ["FeaturePolicy"])
+
+    //https://webbluetoothcg.github.io/web-bluetooth/
+    names = filterOut(names, ["Bluetooth", "BluetoothUUID", "BluetoothDevice", "BluetoothRemoteGATTServer",
+        "BluetoothRemoteGATTService", "BluetoothRemoteGATTCharacteristic", "BluetoothCharacteristicProperties",
+        "BluetoothRemoteGATTDescriptor"])
 
 
 
@@ -463,6 +543,9 @@
         "USBIsochronousOutTransferResult", "USBConfiguration", "USBInterface", "USBAlternateInterface",
         "USBEndpoint"])
 
+    //https://wicg.github.io/speech-api/
+    names = filterOut(names, ["speechSynthesis", "SpeechSynthesisUtterance", "SpeechSynthesisEvent",
+        "SpeechSynthesisErrorEvent"])
 
 
 
@@ -470,8 +553,16 @@
 
 
 
+    // deprecated in MDN
+    names = filterOut(names, ["MediaStreamEvent", "DOMError", "external", "captureEvents", "releaseEvents"])
 
+    //Non-standard in MDN
+    names = filterOut(names, ["XSLTProcessor"])
 
+    //No spec found
+    names = filterOut(names, ["clientInformation", "offscreenBuffering", "styleMedia", "chrome", "PerformanceLayoutJank",
+        "ActivateInvisibleEvent", "PictureInPictureControlEvent", "ApplicationCacheErrorEvent", "IdleManager", "IdleStatus",
+        "Serial", "SerialPort"])
 
 
 
