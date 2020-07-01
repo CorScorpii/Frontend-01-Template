@@ -16,7 +16,7 @@
 
 ### KMP
 
-模式串与主串之间的一种匹配方式。
+模式串与主串之间的一种匹配方式。长字符串中找子串 O（M+N）
 
 ### Wildcard
 
@@ -25,6 +25,23 @@
 ### 正则
 
 处理文本的一种通用方式。
+
+- lastIndex (必须为全局模式才有效)
+
+```
+    var re = /(hi)?/g;
+    console.log(re.exec("hi")); //["hi", "hi", index: 0, input: "hi", groups: undefined]
+    console.log(re.lastIndex); // 2
+```
+
+- exec
+- |
+- () 捕获
+- (?:) 非捕获
+- []
+- 小技巧
+  - /[\s\S]/ 或者 /./ 匹配所有字符
+  - /\w/
 
 ### 状态机
 
