@@ -2,8 +2,6 @@
 
 [Y Combinator](http://kestas.kuliukas.com/YCombinatorExplained/)
 
- http://kestas.kuliukas.com/YCombinatorExplained/
-
 ```javascript
 //yc here
 var y = (g) => ((f) => f(f))((self) => g((...args) => self(self)(...args)))
