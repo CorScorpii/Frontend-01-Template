@@ -1,6 +1,6 @@
 ## 匿名函数递归
 
-[Y Combinator]: http://kestas.kuliukas.com/YCombinatorExplained/	"Y Combinator"
+[Y Combinator](http://kestas.kuliukas.com/YCombinatorExplained/)
 
  http://kestas.kuliukas.com/YCombinatorExplained/
 
@@ -70,5 +70,5 @@ module.exports = class extends Generator {
 }
 ```
 
-[YEOMAN]: https://yeoman.io/	"YEOMAN"
+[YEOMAN](https://yeoman.io/)
 
