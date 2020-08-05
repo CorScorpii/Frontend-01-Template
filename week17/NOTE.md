@@ -1,6 +1,6 @@
 ## 匿名函数递归
 
-[Y Combinator]: http://kestas.kuliukas.com/YCombinatorExplained/
+[Y Combinator]: http://kestas.kuliukas.com/YCombinatorExplained/	"Y Combinator"
 
  http://kestas.kuliukas.com/YCombinatorExplained/
 
@@ -17,7 +17,7 @@ f(100) // 5050
 
 ## 工具分类
 
-![image-20200805203648763](https://github.com/CorScorpii/Frontend-01-Template/tree/master/week17/tools.png)
+![tools](https://github.com/CorScorpii/Frontend-01-Template/raw/master/week17/tools.png)
 
 ## 工具链
 
@@ -70,5 +70,5 @@ module.exports = class extends Generator {
 }
 ```
 
-[YEOMAN]: https://yeoman.io/
+[YEOMAN]: https://yeoman.io/	"YEOMAN"
 
