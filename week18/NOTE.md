@@ -1,4 +1,4 @@
-## Dev工具
+## Dev 工具
 
 - Server
   - build: webpack babel vue jsx postcss……
@@ -6,5 +6,8 @@
   - mock: ……
   - http: websocket
 - Client
+
   - debugger: vscode devtool
   - source map
+
+  -test
