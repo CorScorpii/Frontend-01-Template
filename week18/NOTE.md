@@ -9,5 +9,3 @@
 
   - debugger: vscode devtool
   - source map
-
-  -test
