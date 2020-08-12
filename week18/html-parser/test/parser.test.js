@@ -131,15 +131,15 @@ it('attribute with no value', () => {
 })
 
 it('attribute with no value', () => {
+  let doc = parseHTML('<div        />')
+})
+
+it('self closed single element', () => {
   let doc = parseHTML('<div/>')
 })
 
 it('tagName with Capital letter', () => {
   let doc = parseHTML('<divA></divA>')
-})
-
-it('before attribute name', () => {
-  let doc = parseHTML('<div       ></div>')
 })
 
 it('after attribute name', () => {
@@ -164,4 +164,32 @@ it('unquoted attribute value selfClosing startTag', () => {
 
 it('unquoted  attribute value end', () => {
   let doc = parseHTML('<div id=a></div>')
+})
+
+it('empty tagname', () => {
+  let doc = parseHTML('</>')
+})
+
+it('before attribute value', () => {
+  let doc = parseHTML('<div id=   "a"/>')
+})
+
+it('selfClosing startTag with EOF', () => {
+  let doc = parseHTML('<div /')
+})
+
+it('attribute with no value', function () {
+  let document = parseHTML('<div id = ></div>')
+  let div = document.children[0]
+
+  let count = 0
+
+  for (const attr of div.attributes) {
+    if (attr.name === 'id') {
+      count++
+      assert.equal(attr.value, '')
+    }
+  }
+
+  assert.ok(count === 1)
 })
