@@ -4,7 +4,7 @@ const fs = require('fs')
 const archiver = require('archiver')
 const child_process = require('child_process')
 
-let packname = './package'
+let packname = './dist'
 
 const options = {
   host: 'localhost',
